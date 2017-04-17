@@ -1,4 +1,4 @@
-echo "menu
+echo "MENU
 1. List of Files
 2. Process Status
 3. Date
@@ -11,6 +11,6 @@ case "$choice" in
 1) ls -l;;
 2) ps;;
 3) date;;
-4) who;;
+4) whoami;; 
 5) exit;;
 esac
