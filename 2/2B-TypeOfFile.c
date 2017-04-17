@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <sys/stat.h>
+
 int main(int argc, char **argv)
 {
     int i = 1;
     struct stat buf;
     char *ptr;
-
     if (argc == 1)
     {
         printf("No arguments.. Abort.");
@@ -16,8 +16,8 @@ int main(int argc, char **argv)
         do
         {
             stat(argv[i], &buf);
-            if (S_ISREG(buf.st_mode))
-                ptr = "Regular File";
+            if (S_ISLNK(buf.st_mode))
+                ptr = "Link File";
             else if (S_ISDIR(buf.st_mode))
                 ptr = "Directory";
             else if (S_ISCHR(buf.st_mode))
@@ -26,8 +26,8 @@ int main(int argc, char **argv)
                 ptr = "Block File";
             else if (S_ISFIFO(buf.st_mode))
                 ptr = "FIFO File";
-            else if (S_ISLNK(buf.st_mode))
-                ptr = "Link File";
+            else if (S_ISREG(buf.st_mode))
+                ptr = "Regular File";
             else
                 ptr = "Unknown File";
 
