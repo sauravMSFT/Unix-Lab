@@ -18,5 +18,5 @@ int main(int argc,  char **argv) {
 	printf("No. of positive integers = %d\n", positive);
 	printf("No. of negative integers = %d\n", negative);
 	printf("No. of positive fractional numbers = %d\n", positiveFraction);
-	printf("No. of negatice frcational numbers = %d\n", negativeFraction);
+	printf("No. of negative fractional numbers = %d\n", negativeFraction);
 }
