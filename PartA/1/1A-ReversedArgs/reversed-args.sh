@@ -1,8 +1,4 @@
-#!/bin/bash
-
-for i in `seq 1 $#`; do 
-    res="$1 $res"
-    shift
+for i in $*; do 
+    res="$i $res"
 done
-
 echo $res
