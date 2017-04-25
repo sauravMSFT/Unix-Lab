@@ -1,20 +1,26 @@
 # Unix-Lab
 This repository contains programs from the Unix Lab - Sem VI according to Bangalore University Syllabus.
 
----
+## Dependencies
 
-**How to Run?**
----
+- Ubuntu
 
----
-For Shell Scripts:
+	`sudo apt install build-essential flex`
 
-`bash <fileName.sh>`
+## How to Run?
 
----
+- For Shell Scripts:
 
-For C Programs:
+	Run using: `bash <fileName.sh>`
 
-Compile using: `cc <fileName.c>`
+- For C Programs:
 
-Run: `./a.out`
+	Compile using: `cc <fileName.c>`
+
+	Run using: `./a.out`
+
+- For Lex Programs:
+
+	Compile using: `lex <fileName.l>; gcc lex.yy.c`
+
+	Run using: `./a.out`
