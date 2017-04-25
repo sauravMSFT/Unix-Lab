@@ -3,7 +3,8 @@ then echo "Enter 2 files as arguments"
 exit
 fi
 
-sort -o __temp1__ $1
-sort -o __temp2__ $2
-sort -m __temp1__ __temp2__
-rm __temp1__ __temp2__
+mkdir /tmp/5b
+sort -o /tmp/5b/tmp1 $1
+sort -o /tmp/5b/tmp2 $2
+sort -m /tmp/5b/tmp1 /tmp/5b/tmp2
+rm /tmp/5b -r

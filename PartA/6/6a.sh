@@ -1,9 +1,9 @@
 d=$(date +%-d)
-cal -h | head > __tmp__
+ncal -h > tmp
 if [ $d -lt 10 ]
 then 
-    sed "s/ $d / * /" __tmp__
+    sed "s/ $d / * /" tmp
 else 
-    sed "s/ $d / ** /" __tmp__
+    sed "s/ $d / ** /" tmp
 fi
-rm __tmp__
+rm tmp

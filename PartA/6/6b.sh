@@ -23,4 +23,3 @@ else
     done
 fi
 stty echo
-trap - 2

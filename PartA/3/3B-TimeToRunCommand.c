@@ -1,23 +1,22 @@
-#include <stdio.h>
 #include <sys/times.h>
 #include <unistd.h>
 #include <stdlib.h>
 
+int printf(const char *, ...);
+
 int main(int argc, char **argv)
 {
-    struct tms r1, r2;
-    long end, start;
-    long clk;
+    long end, start, clk;
 
     if (argc == 1)
     {
         printf("No arguments. Abort.");
         return 0;
     }
-    start = times(&r1);
+    start = times(NULL);
     system("clear");
     system(argv[1]);
-    end = times(&r2);
+    end = times(NULL);
 
     clk = sysconf(_SC_CLK_TCK);
     printf("Time taken = %lfs", (end - start) / (double)clk);

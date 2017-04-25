@@ -15,22 +15,30 @@ int main(int argc, char **argv)
     {
         do
         {
-            stat(argv[i], &buf);
-            if (S_ISLNK(buf.st_mode))
+            lstat(argv[i], &buf);
+            switch (buf.st_mode & S_IFMT)
+            {
+            case S_IFLNK:
                 ptr = "Link File";
-            else if (S_ISDIR(buf.st_mode))
+                break;
+            case S_IFDIR:
                 ptr = "Directory";
-            else if (S_ISCHR(buf.st_mode))
+                break;
+            case S_IFCHR:
                 ptr = "Character File";
-            else if (S_ISBLK(buf.st_mode))
+                break;
+            case S_IFBLK:
                 ptr = "Block File";
-            else if (S_ISFIFO(buf.st_mode))
+                break;
+            case S_IFIFO:
                 ptr = "FIFO File";
-            else if (S_ISREG(buf.st_mode))
+                break;
+            case S_IFREG:
                 ptr = "Regular File";
-            else
+                break;
+            default:
                 ptr = "Unknown File";
-
+            }
             printf(" ...\t %s is a %s ...\n", argv[i], ptr);
             ++i;
         } while (i <= argc - 1);
