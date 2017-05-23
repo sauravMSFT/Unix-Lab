@@ -5,10 +5,9 @@
 %token NUM ID NL
 %left '*''/'
 %left '+''-' 
- 
 %%
-stmt: exp NL { printf("Valid\n");exit(0); }
-exp : exp'+'exp
+stmt: exp NL { printf("Expression is valid.\n"); exit(0); }
+exp :	exp'+'exp
         | exp'-'exp
         | exp'*'exp
         | exp'/'exp
@@ -19,15 +18,13 @@ exp : exp'+'exp
         | ID
         ;
 %% 
- 
-main()
+int main()
 {
         printf("Enter expression: ");
         yyparse();
 }
-
 yyerror()
 {
-        printf("Invalid\n");
+        printf("Expression is invalid.\n");
         exit(0);
 }

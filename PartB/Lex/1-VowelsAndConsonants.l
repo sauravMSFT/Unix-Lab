@@ -7,10 +7,9 @@
 [aeiouAEIOU] {vowels++;}
 [a-zA-Z] {consonants++;}
 %%
-int yywrap(){
-	return 1;
-}
-int main() {
+int yywrap(){ return 1; }
+int main() 
+{
 	printf("Enter the string and press return and ^D\n");
 	yylex();
 	printf(

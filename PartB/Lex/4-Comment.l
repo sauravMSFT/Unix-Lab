@@ -1,16 +1,16 @@
 %{
 	#include<stdio.h>
+	int c = 0;
 %}
-
 %%
-\/\/.* ;
-\/\*(.*\n)*.*\*\/ ;
+\/\/.*			c++;
+\/\*[\t\n .]*\*\/	c++;
 %%
-
-main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	yyin=fopen(argv[1],"r");
 	yyout=fopen(argv[2], "w");
 	yylex();
+	printf("Number of comments = %d", c);
 }
 int yywrap() { return 1; }

@@ -1,6 +1,6 @@
 %{
-#include<stdio.h>
-int pfc=0, sfc=0;
+	#include<stdio.h>
+	int pfc=0, sfc=0;
 %}
 
 %%
@@ -8,7 +8,7 @@ int pfc=0, sfc=0;
 "scanf" {fprintf(yyout,"readf"); sfc++;}
 %%
 
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	yyin=fopen(argv[1],"r");
 	yyout=fopen(argv[2],"w");

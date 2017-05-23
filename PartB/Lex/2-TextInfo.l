@@ -5,7 +5,7 @@
 %}
 %%
 \n		{lines++; words++;}
-[\t' ']	words++;
+[\t' ']*	words++;
 [A-Z]	capitalLetters++;
 [a-z]	smallLetters++;
 [0-9]	numbers++;
@@ -17,13 +17,16 @@ int main(int argc, char **argv){
 	
 	total = smallLetters + capitalLetters + numbers + specialCharacters;
 
-	printf("The file %s contains: ", argv[1]);
-	printf("\nLines = %d", lines); 
-	printf("\nWords = %d", words); 
-	printf("\nSmall Letters = %d", smallLetters); 
-	printf("\nCapital Letters = %d", capitalLetters); 
-	printf("\nDigits = %d", numbers); 
-	printf("\nSpecial Characters = %d", specialCharacters); 
-	printf("\nTotal = %d", total); 
+	printf(
+	"The file %s contains: "
+	"\nLines = %d"
+	"\nWords = %d"
+	"\nSmall Letters = %d" 
+	"\nCapital Letters = %d"
+	"\nNumbers = %d" 
+	"\nSpecial Characters = %d"
+	"\nTotal = %d",
+	argv[1], lines, words, smallLetters, capitalLetters,
+	numbers, specialCharacters, total); 
 }
 int yywrap() { return 1; }
