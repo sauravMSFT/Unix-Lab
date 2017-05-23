@@ -24,3 +24,9 @@ This repository contains programs from the Unix Lab - Sem VI according to Bangal
 	Compile using: `lex <fileName.l>; gcc lex.yy.c`
 
 	Run using: `./a.out`
+
+- For Yacc Programs:
+	
+	Compile using: `lex <lexProgram.l>; yacc -d <yaccProgram.y>; gcc lex.yy.c y.tab.c;`
+	
+	Run using: `./a.out`
