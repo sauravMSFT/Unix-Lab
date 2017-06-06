@@ -30,3 +30,24 @@ This repository contains programs from the Unix Lab - Sem VI according to Bangal
 	Compile using: `lex <lexProgram.l>; yacc -d <yaccProgram.y>; gcc lex.yy.c y.tab.c;`
 	
 	Run using: `./a.out`
+
+## "If" Nesting Yacc Program
+
+- Sample Runs:
+	
+	```
+	bash$ ./a.out
+	Enter an expression:
+	if(statement) { if (statement) { if(statement) statement; } }
+	Levels of nesting = 3
+	
+	bash$ ./a.out
+	Enter an expression:
+	if(statement) { if (statement) ;}
+	Levels of nesting = 2
+	
+	bash$ ./a.out
+	Enter an expression:
+	statement;
+	Levels of nesting = 0
+	```
