@@ -11,18 +11,13 @@
 %%
 program: stmt
 	{ result(); }
-	|STATEMENT';'
-	{ result(); }
-	|';'
-	{ result(); }
 stmt:	IF cond '{'stmt'}'
 	{++nl;}
 	|IF cond stmt
 	{++nl;}
-	|IF cond STATEMENT';'
-        {++nl;}
-	|IF cond ';'
-	{++nl;}
+	|';'
+	|STATEMENT';'
+	;
 cond:	'('STATEMENT')'
 	;
 %%
