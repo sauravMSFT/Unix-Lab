@@ -13,4 +13,5 @@ case "$choice" in
 3) date;;
 4) whoami;; 
 5) exit;;
+*) echo Invalid Option;;
 esac
