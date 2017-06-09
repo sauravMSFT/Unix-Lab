@@ -4,7 +4,7 @@
         int yylex();
         void yyerror();
 %}
-%token NUM ID NL
+%token ID NL
 %left '*''/'
 %left '+''-' 
 %%
